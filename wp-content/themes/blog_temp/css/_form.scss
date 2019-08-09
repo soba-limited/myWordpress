@@ -1,0 +1,105 @@
+div.form{
+  main.cont1{
+    @include paddingtop(80px,60px,50px);
+    @include paddingbottom(300px,300px,170px);
+    p.text1{
+      text-align: center;
+      @include tsukuba();
+      padding-bottom: 30px;
+      border-bottom: 1px solid $twelveth;
+      margin-bottom: 30px;
+      a{
+        color: $second;
+        display: inline-block;
+        margin:0 8px;
+        font-size: 1.8rem;
+      }
+    }
+    article.form-wrap{
+      position: relative;
+      z-index: 10;
+      dl{
+        @include flex(space-between,stretch,justify,stretch);
+        margin-top: 30px;
+        @include padding2(0,30px,0);
+        dt{
+          @include basis(240px,200px,100%,0,0);
+          position: relative;
+          span{
+            display: inline-block;
+            color: $second;
+            font-size: 1.2rem;
+            margin-left: 8px;
+          }
+        }
+        dd{
+          @include basis3(calc(100% - 292px),calc(100% - 232px),100%,0,15px);
+          img{
+            display: inline-block;
+          }
+        }
+        input[type="text"],input[type="email"],input[type="tel"],textarea{
+          border:1px solid $twelveth;
+          padding:5px;
+          width: 100%;
+        }
+      }
+      .wpcf7c-btn-confirm,.wpcf7-submit,.wpcf7-back{
+        width: 100%;
+        max-width: 320px;
+        margin:20px auto 0;
+        display: block;
+        padding:15px 15px 13px;
+        background-color: $third;
+        border-radius: 5px;
+        color: #fff;
+        text-align: center;
+      }
+      .wpcf7-back{
+        background-color: $base;
+        color: #fff;
+      }
+      .ajax-loader{
+        display: none;
+      }
+      div.privacy{
+        margin: 30px auto 20px;
+        height: 200px;
+        padding:30px;
+        border:1px solid $twelveth;
+        overflow-y: scroll;
+        h3{
+          color: $second;
+          margin-bottom: 20px;
+          font-size: 1.8rem;
+        }
+      }
+      p.check{
+        text-align: center;
+      }
+      div.send-wrap{
+        p.s-text{
+          font-size: 1.2rem;
+          color: $second;
+          margin-top: 8px;
+          text-align: center;
+        }
+      }
+    }
+  }
+}
+
+div.contact{
+  main.sv{
+    background-image: url("../images/contact/sv.png");
+  }
+}
+
+div.recruit-form{
+  main.sv{
+    background-image: url("../images/recruit/sv.png");
+  }
+  p.hide{
+    display: none;
+  }
+}

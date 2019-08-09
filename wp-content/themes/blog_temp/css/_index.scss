@@ -1,0 +1,459 @@
+main.reserve-card{
+  position: fixed;
+  z-index: 3;
+  left: 0;
+  top: calc(100vh - 420px);
+  width: 484px;
+  transition: ease-in .3s all;
+  &.left-hide{
+    left: -430px;
+  }
+  @include flex(flex-start,stretch,start,stretch);
+  section.left{
+    @include basis(430px,430px,430px,0,0);
+    position: relative;
+    background-color: #fff;
+    p.text{
+      padding:20px 24px;
+    }
+    article.flex{
+      @include flex(space-between,center,justify,center);
+      padding:0 24px;
+      p{
+        @include basis(calc(50% - 10px),calc(50% - 10px),calc(50% - 10px),0,0);
+        a{
+          display: block;
+          transition: ease .2s all;
+          opacity: 1;
+          &:hover{
+            opacity: .6;
+          }
+        }
+      }
+    }
+    p.address{
+      position: absolute;
+      background-color: #d1e8c9;
+      text-align: center;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      padding:12px 8px;
+      a{
+        line-height: 1;
+        @include tsukuba();
+        font-size: 1.7rem;
+        text-decoration: underline;
+        color: $second;
+      }
+    }
+  }
+  section.toggle-img{
+    @include basis(54px,54px,54px,0,0);
+    cursor: pointer;
+  }
+}
+main.mv{
+  @media only screen and (min-width: 1921px){
+    img{
+      width: 100%;
+    }
+  }
+}
+div.index{
+  width: 100%;
+  overflow-x: hidden;
+  h2.type1{
+    text-align: center;
+    line-height: 1.2;
+    p.jp{
+      color: $third;
+      @include tsukuba();
+      @include fontsize(2.4rem,2.4rem,2rem);
+      padding:5px 0;
+    }
+    p.en{
+      color: $second;
+      font-size: 1.4rem;
+    }
+  }
+  h2.type2{
+    position: relative;
+    line-height: 1.2;
+    padding-left: 66px;
+    p.icon{
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+    p.jp{
+      color: $third;
+      @include tsukuba();
+      @include fontsize(2.4rem,2.4rem,2rem);
+      padding:5px 0;
+    }
+    p.en{
+      color: $second;
+      font-size: 1.4rem;
+    }
+  }
+  main.news{
+    @include paddingtop(80px,60px,50px);
+    position: relative;
+    &::before{
+      content:"";
+      width: 100%;
+      height: 585px;
+      position: absolute;
+      z-index: -5;
+      background:url("../images/index/news-back.png") no-repeat center;
+      left: 0;
+      top: 80px;
+    }
+    &::after{
+      content:"";
+      width: 182px;
+      height: 310px;
+      background:url("../images/index/news-tree-left.png") no-repeat center;
+      background-size: 100% auto;
+      position: absolute;
+      z-index: -4;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      margin:auto 0;
+      @include tabhide();
+    }
+    article.news-wrap{
+      margin: 30px auto 0;
+      max-width: 680px;
+      div.single{
+        @include flex(space-between,center,justify,center);
+        @media only screen and (max-width: 767px){
+          @include flex(flex-start,center,start,center);
+        }
+        padding:18px 0;
+        border-top: 1px solid $third;
+        &:last-of-type{
+          border-bottom: 1px solid $third;
+        }
+        p.date{
+          @include basis2(72px,72px,72px,0,0);
+          color: $third;
+          font-size: 1.2rem;
+          @media only screen and (max-width: 767px){
+            margin-right: 10px;
+          }
+        }
+        p.tag{
+          @include basis2(120px,120px,120px,0,0);
+          text-align: center;
+          padding:8px 0;
+          line-height: 1;
+          background:$fourth;
+          border-radius: 15px;
+          font-size: 1.2rem;
+          color: $third;
+        }
+        p.title{
+          @include basis3(calc(100% - 222px),calc(100% - 222px),100%,0,10px);
+        }
+      }
+    }
+    p.link{
+      max-width: 280px;
+      margin:30px auto 0;
+      a{
+        display: block;
+        background-color: $third;
+        color: #fff;
+        text-align: center;
+        border-radius: 30px;
+        line-height: 1;
+        padding:15px;
+        transition: ease .1s all;
+        border:$third 1px solid;
+        &:hover{
+          color: $third;
+          background-color: #fff;
+        }
+      }
+    }
+  }
+  main.about{
+    @include paddingtop(80px,60px,50px);
+    @include paddingbottom(80px,60px,50px);
+    background:url("../images/index/about-wave.png") no-repeat;
+    background-position: top center;
+    position: relative;
+    @media only screen and (min-width: 1921px){
+      background-size: 100% auto;
+    }
+    &:before{
+      content:"";
+      width: 100%;
+      height: -ms-calc(100% - 163px);
+      height: -webkit-calc(100% - 163px);
+      height: calc(100% - 163px);
+      position: absolute;
+      z-index: -2;
+      top: 163px;
+      left: 0;
+      background-color: $fourth;
+    }
+    &::after{
+      content:"";
+      position: absolute;
+      background:url("../images/index/news-tree-right.png") no-repeat;
+      width: 299px;
+      height: 375px;
+      right: 0;
+      top: -150px;
+      @include tabhide();
+    }
+    section.flex{
+      @include flex(space-between,center,justify,center);
+      &::before{
+        content:"";
+        position: absolute;
+        background:url("../images/index/about-tree-left.png") no-repeat;
+        width: 64px;
+        height: 83px;
+        left: 320px;
+        bottom: 0;
+        @include tabhide();
+      }
+      &::after{
+        content:"";
+        position: absolute;
+        background:url("../images/index/about-tree-right.png") no-repeat;
+        width: 70px;
+        height: 108px;
+        right: 350px;
+        bottom: 0;
+        @include tabhide();
+      }
+      article.left{
+        @include basis(608px,608px,100%,0,0);
+        @include tabcenter();
+        @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+          margin-left: 0;
+          margin-right: auto;
+        }
+      }
+      article.right{
+        @include basis3(calc(100% - 638px),480px,100%,30px,30px);
+        @include tabcenter();
+        p.text{
+          margin-top: 30px;
+        }
+        p.link{
+          max-width: 280px;
+          margin:30px auto 0;
+          a{
+            display: block;
+            background-color: $second;
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            line-height: 1;
+            padding:15px;
+            transition: ease .1s all;
+            border:$second 1px solid;
+            &:hover{
+              color: $second;
+              background-color: $fourth;
+            }
+          }
+        }
+      }
+    }
+  }
+  main.schedule{
+    @include paddingtop(80px,60px,50px);
+    background: $sixth url("../images/index/schedule-balloon.png") no-repeat center;
+    position: relative;
+    h2{
+      background:url("../images/index/schedule-h2-flag.png") no-repeat center;
+      background-size: contain;
+      @media only screen and (max-width: 767px){
+        display: none;
+      }
+    }
+    article.flex{
+      @include flex(space-between,stretch,justify,stretch);
+      margin-top: 30px;
+      div.single{
+        @include basis(276px,calc(33.3333% - 12px),100%,0,30px);
+      }
+      h3{
+        margin:20px auto 15px;
+        text-align: center;
+        a{
+          font-size: 1.8rem;
+          line-height: 1;
+          color: $third;
+          @include tsukuba();
+          transition: ease .3s all;
+            &:hover{
+              color: $second;
+              text-decoration: underline;
+            }
+        }
+      }
+    }
+  }
+  main.information{
+    @include paddingtop(240px,200px,180px);
+    @include paddingbottom(80px,60px,50px);
+    background:#fff url("../images/index/info-back.png") no-repeat top center;
+    @media only screen and (min-width: 1921px){
+      background-size: 100% auto;
+    }
+    position: relative;
+    &::before{
+      content:"";
+      width: 65px;
+      height: 47px;
+      position: absolute;
+      bottom: 0;
+      left: 1530px;
+      @include tabhide();
+      background:url("../images/index/info-flower.png") no-repeat;
+    }
+    section.flex{
+      @include flex(space-between,center,justify,center);
+      article.right{
+        @include basis(608px,608px,100%,30px,30px);
+        @include tabcenter();
+      }
+      article.left{
+        @include basis3(calc(100% - 638px),480px,100%,30px,30px);
+        @include tabcenter();
+        p.b-text{
+          margin-top: 30px;
+          a{
+            display: inline-block;
+            line-height: 1;
+            text-decoration: underline;
+            color: $third;
+            font-size: 1.5rem;
+            @include tsukuba();
+            position: relative;
+            padding-left: 10px;
+            font-weight: bold;
+            margin-right: 6px;
+            transition: ease .3s all;
+            &:hover{
+              color: $second;
+            }
+            &:last-of-type{
+              margin-right: 0;
+            }
+            &::before{
+              content:"・";
+              text-decoration: none;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+        p.text{
+          margin-top: 8px;
+        }
+        p.link{
+          max-width: 280px;
+          margin:30px auto 0;
+          a{
+            display: block;
+            background-color: $third;
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            line-height: 1;
+            padding:15px;
+            transition: ease .1s all;
+            border:$third 1px solid;
+            &:hover{
+              color: $third;
+              background-color: #fff;
+            }
+          }
+        }
+      }
+    }
+  }
+  main.recruit{
+    @include paddingtop(80px,60px,50px);
+    @include paddingbottom(300px,300px,170px);
+    background:$fourth;
+    section.flex{
+      @include flex(space-between,center,justify,center);
+      @media only screen and (min-width: 1366px){
+        -ms-flex-direction: row-reverse;
+        -webkit-flex-direction: row-reverse;
+        flex-direction: row-reverse;
+      }
+      article.right{
+        @include basis(608px,608px,100%,30px,30px);
+        @include tabcenter();
+      }
+      article.left{
+        @include basis3(calc(100% - 638px),480px,100%,30px,30px);
+        @include tabcenter();
+        p.b-text{
+          margin-top: 30px;
+          a{
+            display: inline-block;
+            line-height: 1;
+            text-decoration: underline;
+            color: $third;
+            font-size: 1.5rem;
+            @include tsukuba();
+            position: relative;
+            padding-left: 10px;
+            font-weight: bold;
+            margin-right: 6px;
+            transition: ease .3s all;
+            &:hover{
+              color: $second;
+            }
+            &:last-of-type{
+              margin-right: 0;
+            }
+            &::before{
+              content:"・";
+              text-decoration: none;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+          }
+        }
+        p.text{
+          margin-top: 8px;
+        }
+        p.link{
+          max-width: 280px;
+          margin:30px auto 0;
+          a{
+            display: block;
+            background-color: $second;
+            color: #fff;
+            text-align: center;
+            border-radius: 30px;
+            line-height: 1;
+            padding:15px;
+            transition: ease .1s all;
+            border:$second 1px solid;
+            &:hover{
+              color: $second;
+              background-color: $fourth;
+            }
+          }
+        }
+      }
+    }
+  }
+}

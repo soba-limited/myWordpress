@@ -1,0 +1,148 @@
+main.sv{
+  background-position: center;
+  height: 600px;
+  background-repeat: no-repeat;
+  @media only screen and (min-width: 1921px){
+    background-size: cover;
+  }
+  @media only screen and (max-width: 767px){
+    height: 400px;
+    background-size: cover;
+  }
+}
+div.under{
+  main.page-title{
+    text-align: center;
+    position: relative;
+    z-index: 1;
+    transform: translateY(-30px);
+    h2.type1{
+      text-align: center;
+      line-height: 1.2;
+      position: relative;
+      &::before{
+        content:"";
+        position: absolute;
+        width: 170px;
+        height: 170px;
+        left: 0;
+        right: 0;
+        margin:0 auto;
+        background-color: #fff;
+        border-radius: 85px;
+        z-index: -1;
+        top:-40px;
+      }
+      p.jp{
+        color: $third;
+        @include tsukuba();
+        @include fontsize(2.4rem,2.4rem,2rem);
+        padding:5px 0;
+      }
+      p.en{
+        color: $second;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  nav.page-nav{
+    position: relative;
+    z-index: 1;
+    ul{
+      @include flex(center,center,center,center);
+      li{
+        a{
+          display: block;
+          color: $third;
+          line-height: 1;
+          position: relative;
+          padding:0 5px 0 25px;
+          text-align: center;
+          transition: ease .3s all;
+          &:hover{
+            letter-spacing: .3em;
+            text-decoration: underline;
+          }
+          @media only screen and(max-width: 767px){
+            padding:0 0 0 5px;
+            text-align: left;
+          }
+          &::after{
+            content:url(../images/common/arrow-bottom.png);
+            display: inline-block;
+            vertical-align: middle;
+            transform: scale(.4) translateX(-20px) translateY(-3px);
+          }
+          &::before{
+            content:"";
+            width: 1px;
+            height: 20px;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            background-color: $third;
+            margin: auto 0;
+            transform: translateY(-1px);
+            @media only screen and (max-width: 767px){
+              display: none;;
+            }
+          }
+        }
+        &:last-of-type{
+          a::before{
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  main{
+    h2.type2{
+      line-height: 1;
+      padding-left: 25px;
+      padding-top: 3px;
+      padding-bottom: 3px;
+      position: relative;
+      &::before{
+        content:"";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 6px;
+        height: 100%;
+        border-radius: 3px;
+        background-color: $second;
+      }
+      p.jp{
+        @include fontsize(2.4rem,2.4rem,2.2rem);
+        @include tsukuba();
+        color: $third;
+        margin-bottom: 5px;
+        line-height: 1;
+      }
+      p.en{
+        font-size: 1.4rem;
+        color: $second;
+        line-height: 1;
+      }
+    }
+    h2.type3{
+      line-height: 1;
+      position: relative;
+      text-align: center;
+      p.jp{
+        @include fontsize(2.4rem,2.4rem,2.2rem);
+        @include tsukuba();
+        color: $third;
+        margin-bottom: 5px;
+        line-height: 1.2;
+      }
+      p.en{
+        font-size: 1.4rem;
+        color: $second;
+        line-height: 1.2;
+      }
+    }
+  }
+}

@@ -1,0 +1,177 @@
+div.information{
+  main.sv{
+    background-image: url("../images/information/sv.png");
+  }
+  main.cont1{
+    @include paddingtop(80px,60px,50px);
+    @include paddingbottom(80px,60px,50px);
+    position: relative;
+    background:url("../images/information/back1.png") no-repeat center top;
+    section.flex{
+      @include flex(space-between,flex-start,justify,start);
+      margin-top: 30px;
+      h2{
+        @include basis(120px,100%,100%,0,0);
+      }
+      p.text{
+        @include basis3(calc(100% - 190px),100%,100%,15px,15px);
+        a{
+          color: $second;
+          text-decoration: underline;
+          transition: ease .3s all;
+          &:hover{
+            letter-spacing: .1em;
+          }
+        }
+      }
+    }
+    h3{
+      text-align: center;
+      font-size: 1.6rem;
+      color: $second;
+      margin:30px auto;
+    }
+    section.list{
+      ul{
+        @include flex(space-between,center,justify,center);
+      }
+      li{
+        @include basis(calc(50% - 15px),calc(50% - 15px),100%,0,0);
+        border-bottom: 1px dashed $eighth;
+        padding:18px;
+        line-height: 1;
+        &:first-of-type{
+          border-top: 1px dashed $eighth;
+        }
+        @media only screen and (min-width: 768px){
+          &:nth-of-type(2){
+            border-top:1px dashed $eighth;;
+          }
+        }
+      }
+    }
+    p.link{
+      margin: 30px auto 0;
+      max-width: 280px;
+      text-align: center;
+      a{
+        display: block;
+        border-radius: 30px;
+        background:$second;
+        color: #fff;
+        padding:10px;
+        transition: ease .3s all;
+        &:hover{
+          background-color: #fff;
+          color: $second;
+          box-shadow: 0 0 0 2px $second inset;
+        }
+      }
+    }
+  }
+  main.cont2{
+    @include paddingtop(80px,60px,50px);
+    background:$eleventh;
+    position: relative;
+    &::before{
+      content:"";
+      width: 100%;
+      height: 100%;
+      top: -80px;
+      left: 0;
+      position: absolute;
+      z-index: 1;
+      background:url("../images/information/back2.png") no-repeat center top;
+    }
+    section.flex{
+      @include margintop(50px,50px,30px);
+      @include flex(space-between,stretch,justify,stretch);
+      article.left{
+        @include basis(372px,330px,100%,0,0);
+      }
+      article.right{
+        @include basis3(calc(100% - 402px),calc(100% - 350px),100%,0,20px);
+        background:#fff;
+        padding:50px 30px;
+        line-height: 1.5;
+        @media only screen and (max-width: 1365px){
+          padding:30px 20px;
+          line-height: 1.3;
+        }
+        h3{
+          color: $second;
+          padding-left: 10px;
+          border-left: 1px solid $second;
+          margin-bottom: 8px;
+          font-size: 1.4rem;
+          line-height: 1;
+        }
+        p.text{
+          margin-bottom: 15px;
+          padding-left: 11px;
+          &:last-of-type{
+            margin-bottom: 0;
+          }
+          &.flex{
+            @include flex(space-between,stretch,justify,stretch);
+            span.left{
+              @include basis2(100px,100px,100px,0,0);
+            }
+            span.right{
+              @include basis2(calc(100% - 120px),calc(100% - 114px),calc(100% - 114px),0,0);
+            }
+          }
+        }
+      }
+    }
+  }
+  main.cont3{
+    @include paddingtop(240px,240px,240px);
+    @include paddingbottom(300px,300px,170px);
+    background:url("../images/information/back3.png") no-repeat top center;
+    position: relative;
+    z-index: 10;
+    @media only screen and (min-width: 1921px){
+      background-size: 100% auto;
+    }
+    section.flex{
+      @include flex(space-between,stretch,justify,stretch);
+      article.left{
+        @include basis(calc(100% - 650px),100%,100%,0,0);
+        p.text1{
+          margin:20px auto;
+        }
+        p.text2{
+          a{
+            color: $second;
+            text-decoration: underline;
+            display: block;
+            font-size: 1.6rem;
+            transition: ease .3s all;
+            &:first-of-type{
+              margin-bottom: 8px;
+            }
+            &:hover{
+              letter-spacing: .1em;
+            }
+          }
+          svg{
+            display: inline-block;
+            margin-right: 3px;
+          }
+        }
+      }
+      article.right{
+        @include basis3(620px,620px,100%,30px,20px);
+        @include tabcenter();
+        @include flex(space-between,stretch,justify,stretch);
+        p.img{
+          @include basis(calc(25% - 9px),calc(25% - 9px),calc(50% - 6px),0,0);
+          @media only screen and (max-width: 767px){
+            padding:6px 0;
+          }
+        }
+      }
+    }
+  }
+}

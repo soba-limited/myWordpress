@@ -1,0 +1,232 @@
+header{
+  width: 100%;
+  max-width: 1340px;
+  background-color: #fff;
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin:0 auto;
+  padding:15px 50px;
+  box-shadow: 0 5px 8px rgba(0,0,0,.2);
+  @media only screen and (max-width: 767px){
+    top: -200px;
+    &.toggle-in{
+      top: 0;
+    }
+  }
+  &::before{
+    content:"";
+    width: 100%;
+    height: 5px;
+    left: 0;
+    bottom: -5px;
+    background-color: #ddd;
+    position: absolute;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: ease .5s all;
+  }
+  @include flex(space-between,center,justify,center);
+  transition: ease-out .3s all;
+  @media only screen and (max-width: 767px){
+    padding:15px;
+  }
+  h1{
+    @include basis(300px,200px,200px,0,0);
+    @media only screen and (max-width: 1365px){
+      margin:0 auto;
+    }
+    a{
+      transition: ease .3s all;
+      display: block;
+      &:hover{
+        opacity: .6;
+      }
+    }
+  }
+  nav.global{
+    @include basis3(calc(100% - 350px),100%,100%,10px,10px);
+    ul{
+      width: 100%;
+      @include flex(space-between,center,justify,center);
+    }
+    li{
+      @include basis(16.6666%,16.6666%,33.3333%,0,0);
+      @media only screen and (max-width: 767px){
+        padding:3px 0;
+      }
+      a{
+        display: block;
+        border-left: 1px solid $third;
+        padding:8px;
+        transition: ease-out .3s all;
+        @media only screen and (max-width: 767px){
+          padding:3px;
+        }
+        text-align: center;
+        line-height: 1.4;
+        position: relative;
+        overflow: hidden;
+        &::before{
+          content:"";
+          width: 10px;
+          height: 10px;
+          position: absolute;
+          top:0;
+          left:0;
+          bottom: 0;
+          right: 0;
+          border-radius: 50%;
+          background-color: $third;
+          margin:auto;
+          z-index: -1;
+          transform: scale(0);
+          transition: ease 1s all;
+        }
+        span{
+          display: block;
+        }
+        span.jp{
+          color: $second;
+          @include tsukuba();
+          @include fontsize(1.8rem,1.4rem,1.3rem);
+          transition: ease .5s all;
+        }
+        span.en{
+          color: $third;
+          @include fontsize(1.4rem,1.2rem,1.1rem);
+          transition: ease .5s all;
+        }
+        &:hover{
+          &::before{
+            transform: scale(20);
+          }
+          span{
+            color: #fff;
+          }
+        }
+      }
+      &:last-of-type a{
+        border-right: 1px solid $third;
+      }
+      @media only screen and (max-width: 767px){
+        &:nth-of-type(3n) a{
+          border-right: 1px solid $third;
+        }
+      }
+    }
+  }
+  &.slim{
+    &::before{
+      transform: scaleX(1);
+    }
+    padding:8px 50px;
+    @media only screen and (max-width: 767px){
+      padding:8px 15px;
+    }
+    h1{
+      @media only screen and (max-width: 1365px) and (min-width: 768px){
+        display: none;
+      }
+    }
+    nav.global{
+      @media only screen and (max-width: 1365px) and (min-width: 768px){
+        margin-top: 0;
+      }
+      li a{
+        padding:3px;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+section.toggle-button{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  width: 44px;
+  height: 44px;
+  background-color: #fff;
+  z-index: 1000;
+  border-radius: 3px;
+  box-shadow: 0 0 0 1px $third;
+  transition: ease-in .2s all;
+  *{
+    transition: ease-in .2s all;
+  }
+  button{
+    display: block;
+    height: 100%;
+    width: 100%;
+    padding:10px 6px;
+  }
+  button:focus{
+    outline:none;
+  }
+  article.bar-wrap{
+    width:24px;
+    margin:0 auto;
+    height: 12px;
+    position: relative;
+    p.bar{
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background:$second;
+      left: 0;
+      &:first-of-type{
+        top: 0;
+      }
+      &:nth-of-type(2){
+        top: 5px;
+      }
+      &:last-of-type{
+        top: 10px;
+      }
+    }
+  }
+  p.text{
+    margin-top: 4px;
+    span{
+      display: block;
+      font-size: 1rem;
+      color: $second;
+      line-height: 1;
+      letter-spacing: -.05em;
+      transform: scaleX(.9);
+      &::before{
+        content:"MENU";
+      }
+    }
+  }
+  &.close{
+    background-color: $second;
+    box-shadow: 0 0 0 1px $second;
+    article.bar-wrap{
+      p.bar{
+        background:#fff;
+        &:first-of-type{
+          top: 5px;
+          transform: rotate(150deg);
+        }
+        &:nth-of-type(2){
+          display: none;
+        }
+        &:last-of-type{
+          top: 5px;
+          transform: rotate(-150deg);
+        }
+      }
+    }
+    p.text{
+      span{
+        color: #fff;
+        &::before{
+          content:"CLOSE";
+        }
+      }
+    }
+  }
+}
